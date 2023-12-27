@@ -38,7 +38,7 @@ for lr, dropout, wd, optimizer in param_combinations:
         optimizer=optimizer, 
         pretrained=True, 
         patience=3,
-        plots=False,
+        plots=True,
         batch=32,
         val=True,
         augment=False,
