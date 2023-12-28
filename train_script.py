@@ -22,7 +22,7 @@ if __name__ == "__main__":
     model = YOLO("yolov8n.pt")
     model.train(
         data="ears.yaml", 
-        epochs=1, 
+        epochs=20, 
         optimizer=optimizer, 
         pretrained=True, 
         patience=3,
