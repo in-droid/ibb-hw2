@@ -31,6 +31,7 @@ if __name__ == "__main__":
     model.train(
         data="ears.yaml", 
         epochs=20, 
+        epochs=20, 
         optimizer=optimizer, 
         pretrained=True, 
         patience=3,
