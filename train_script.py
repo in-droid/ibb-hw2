@@ -4,7 +4,7 @@ from ultralytics import YOLO
 import os, itertools, datetime
 import pickle
 
-OUTPUT_PATH = 'runs/detect/grid_search'
+OUTPUT_PATH = 'runs/detect/grid_search_30_12'
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Training Script')
@@ -18,6 +18,8 @@ def parse_args():
     parser.add_argument('--hsv_v', type=float, default=0, help='HSV-Value augmentation')
     parser.add_argument('--degrees', type=float, default=0, help='Rotation augmentation')
     parser.add_argument('--mixup', type=float, default=0, help='Mixup augmentation')
+    parser.add_argument('--mosaic', type=float, default=0, help='Mosaic augmentation')
+    parser.add_argument('--scale', type=float, default=0, help='Scale augmentation')
     return parser.parse_args()
 
 if __name__ == "__main__":
@@ -30,7 +32,6 @@ if __name__ == "__main__":
     model = YOLO("yolov8n.pt")
     model.train(
         data="ears.yaml", 
-        epochs=20, 
         epochs=20, 
         optimizer=optimizer, 
         pretrained=True, 
